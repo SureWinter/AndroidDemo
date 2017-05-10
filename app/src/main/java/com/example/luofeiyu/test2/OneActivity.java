@@ -34,11 +34,23 @@ public class OneActivity extends AppCompatActivity {
 //                intent.setData(Uri.parse("http://www.baidu.com"));
 //                startActivity(intent);
                 // 拨号
+//                Intent intent = new Intent(Intent.ACTION_DIAL);
+//                intent.setData(Uri.parse("tel:10086"));
+//                startActivity(intent);
 
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:10086"));
-                startActivity(intent);
+//                // 传递字符串
+//                String data = "Android 真牛逼";
+//                Intent intent = new Intent(OneActivity.this, TwoActivity.class);
+//                intent.putExtra("extra_data", data);
+//                startActivity(intent);
+
+                // 反向传值
+
+                Intent intent = new Intent(OneActivity.this, TwoActivity.class);
+                startActivityForResult(intent, 1);
+
             }
+
         });
     }
 
@@ -62,6 +74,7 @@ public class OneActivity extends AppCompatActivity {
         }
         return true;
     }
+
 
 
 }
