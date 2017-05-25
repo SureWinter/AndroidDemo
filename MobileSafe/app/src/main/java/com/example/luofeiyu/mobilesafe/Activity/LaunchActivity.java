@@ -8,7 +8,10 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.luofeiyu.mobilesafe.R;
 import com.example.luofeiyu.mobilesafe.Utils.StreamUtil;
@@ -22,7 +25,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class LaunchActivity extends AppCompatActivity {
+public class LaunchActivity extends AppCompatActivity implements View.OnClickListener {
 
     protected static final String tag = "LaunchActivity";
 
@@ -49,6 +52,8 @@ public class LaunchActivity extends AppCompatActivity {
         //
         initData();
 
+        TextView text = new TextView(getApplicationContext());
+        text.setOnClickListener(this);
     }
 
     private void initUI() {
@@ -115,7 +120,8 @@ public class LaunchActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     }
-                    mHandler.
+                    mHandler.sendMessage(msg);
+
                 }
             }
 
@@ -130,6 +136,9 @@ public class LaunchActivity extends AppCompatActivity {
             switch (msg.what) {
                 case UPDATE_VERSION:
                     // 弹出提示框
+                    showUpdateDialog();
+
+                    Toast.makeText(LaunchActivity.this, "niubi", Toast.LENGTH_SHORT).show();
                     break;
                 case ENTER_HOME:
                     // 进入程序主界面
@@ -142,6 +151,20 @@ public class LaunchActivity extends AppCompatActivity {
                     break;
             }
         }
+
+
+    };
+
+    private void showUpdateDialog() {
+
+        Log.i(tag,);
+        Log.i(tag,)
+        Log.i(tag,)
+        Log.i(tag,)
+        Log.i(tag,)
+        Log.i(tag,)
+        Log.i(tag,)
+        Log.i(tag,)
     }
 
 
@@ -169,5 +192,10 @@ public class LaunchActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
